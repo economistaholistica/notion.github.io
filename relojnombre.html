@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greetings</title>
+    <title>Saludo Notion</title>
 
     <style>
 
@@ -117,38 +117,24 @@ function dispalyGreetings(today){
         var monthName = monthNames[today.getMonth()];
         var date = today.getDate();
         var year = today.getFullYear();
-        document.getElementById('date').innerHTML =dayName+", "+monthName+" "+date+" "+year;
+        document.getElementById('date').innerHTML =dayName+", "+date+" "+monthName+" "+year;
 
     }
 
 
     function dispalyClock(today) {
 
-        var hour = padZeros(twelveHour(today.getHours()));
+        var hour = padZeros(today.getHours());
         var minutes = padZeros(today.getMinutes());
         var seconds = padZeros(today.getSeconds());
        
-        if(today.getHours() >=12){
-            seconds+=" pm"
-        }
-        else{
-            seconds+=" am"
-        }
        
         document.getElementById('hour').innerHTML = hour;
         document.getElementById('min').innerHTML = minutes;
         document.getElementById('sec').innerHTML = seconds;
     }
 
-    function twelveHour(hour) {
-        if (hour > 12) {
-            return hour -= 12
-        } else if (hour === 0) {
-            return hour = 12;
-        } else {
-            return hour
-        }
-    }
+
     function padZeros(num) {
         if (num < 10) {
             num = '0' + num
